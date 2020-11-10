@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team33.gui.DashboardViewController">
+   <children>
+      <VBox id="dash-container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label id="green-heading-text" text="FICHIERS RÉCENTS">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin></Label>
+            <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <JFXListView id="recent-files-list" fx:id="fileLists" prefHeight="272.0" prefWidth="600.0">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding></JFXListView>
+                  <Label id="unavailable" fx:id="noFile" text="AUCUN FICHIER RÉCENT" />
+               </children>
+            </StackPane>
+            <Line id="line" endX="1400.0" strokeWidth="2.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Line>
+            <Label id="green-heading-text" text="NOMBRE D'ACCÉS PAR PÉRIODE">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin></Label>
+            <AreaChart maxHeight="-Infinity" prefHeight="300.0" prefWidth="600.0" VBox.vgrow="NEVER">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </AreaChart>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
